@@ -1,0 +1,1 @@
+EL siguiente proyecto es de uso libre con creditos al desarrollador original qeeqbox: [text](https://github.com/qeeqbox/social-analyzer/tree/main)
