@@ -447,21 +447,21 @@ class SocialAnalyzer():
             temp_profile["text"] = temp_profile["text"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
             temp_profile["title"] = temp_profile["title"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
 
-            if self.waf:
-                with suppress(Exception):
-                    if 'cf-ray' in answer:
-                        temp_profile["text"] = "filtered"
-                        temp_profile["title"] = "filtered"
-                    elif "server" in answer:
-                        if "cloudflare" in answer["server"]:
-                            temp_profile["text"] = "filtered"
-                            temp_profile["title"] = "filtered"
-                    if research(self.strings_pages, temp_profile["text"]):
-                        temp_profile["text"] = "filtered"
-                        temp_profile["title"] = "filtered"
-                    if research(self.strings_titles, temp_profile["title"]):
-                        temp_profile["text"] = "filtered"
-                        temp_profile["title"] = "filtered"
+            # if self.waf:
+            #     with suppress(Exception):
+            #         if 'cf-ray' in answer:
+            #             temp_profile["text"] = "filtered"
+            #             temp_profile["title"] = "filtered"
+            #         elif "server" in answer:
+            #             if "cloudflare" in answer["server"]:
+            #                 temp_profile["text"] = "filtered"
+            #                 temp_profile["title"] = "filtered"
+            #         if research(self.strings_pages, temp_profile["text"]):
+            #             temp_profile["text"] = "filtered"
+            #             temp_profile["title"] = "filtered"
+            #         if research(self.strings_titles, temp_profile["title"]):
+            #             temp_profile["text"] = "filtered"
+            #             temp_profile["title"] = "filtered"
 
             with suppress(Exception):
                 if detections_count != 0:
