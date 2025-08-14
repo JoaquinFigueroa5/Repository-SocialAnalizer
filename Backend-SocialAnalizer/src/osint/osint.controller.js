@@ -2,6 +2,8 @@ import { runScript } from '../utils/runScript.js';
 
 export async function analyzeSocial(req, res) {
   const { username } = req.body;
+  console.log(req.body);
+  
   if (!username) return res.status(400).json({ error: 'Falta el nombre de usuario' });
 
   try {

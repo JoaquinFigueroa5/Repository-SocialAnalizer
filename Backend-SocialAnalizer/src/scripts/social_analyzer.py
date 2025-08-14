@@ -8,8 +8,10 @@ def run_social_analyzer(username):
         "src/tools/social-analyzer/app.py",
         "--username", username,
         "--output", "json",
-        "--top", "50",
-        "--extract"
+        "--top", "100",
+        "--extract",
+        "--metadata"
+        
     ]
 
     result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
